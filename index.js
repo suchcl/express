@@ -50,8 +50,67 @@ app.get("/", function (req, res) {
 
 });
 
+app.get("/menu", function (req, res) {
+    const menu = [
+        {
+            id: 1,
+            path: '/orderList',
+            text: '订单列表',
+        },
+        {
+            id: 2,
+            path: '/report',
+            text: '商品管理',
+        },
+        {
+            id: 3,
+            path: '/service',
+            text: '客服',
+        },
+        {
+            id: 4,
+            path: "/chanel",
+            text: "渠道管理",
+            children: [
+                {
+                    id: 5,
+                    path: "/chanel/supplier",
+                    text: "供应商管理"
+                },
+                {
+                    id: 6,
+                    path: "/chanel/contract",
+                    text: "合同管理",
+                    children: [
+                        {
+                            id: 8,
+                            path: '/chanel/contract/deal',
+                            text: "交易合同"
+                        },
+                        {
+                            id: 9,
+                            path: "/chanel/contract/mortgage",
+                            text: "抵押合同"
+                        },
+                        {
+                            id: 10,
+                            path: "/chanel/contract/lease",
+                            text: "租赁合同"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 7,
+            path: "/customer",
+            text: "客户管理"
+        }
+    ];
+    res.send(menu);
+});
 
-app.listen(3000, function (err) {
+app.listen(3001, function (err) {
     if (err) {
         return;
     }
