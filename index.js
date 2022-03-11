@@ -110,9 +110,11 @@ app.get("/menu", function (req, res) {
     res.send(menu);
 });
 
-app.listen(3001, function (err) {
+
+
+app.listen(3000, function (err) {
     if (err) {
         return;
     }
-    console.log("server is running....");
+    console.log("server is running at 3000");
 });
