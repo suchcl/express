@@ -105,9 +105,33 @@ app.get("/menu", function (req, res) {
             id: 7,
             path: "/customer",
             text: "客户管理"
+        },
+        {
+            id: 11,
+            path: "/commodity",
+            text: "商品管理",
+            icon: "RobotOutlined",
+            children: [
+                {
+                    id: 12,
+                    path: "/commodity/mechanical",
+                    text: "机械商品"
+                },
+                {
+                    id: 13,
+                    path: "/commodity/office",
+                    text: "办公用品"
+                }
+            ]
         }
     ];
-    res.send(menu);
+    const data = {
+        code: 200,
+        defaultOpenKey: ['/commodity'],
+        msg: "获取成功",
+        data: menu
+    };
+    res.send(data);
 });
 
 
