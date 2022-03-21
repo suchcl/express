@@ -56,46 +56,55 @@ app.get("/menu", function (req, res) {
             id: 1,
             path: '/orderList',
             text: '订单列表',
+            icon: "BarChartOutlined"
         },
         {
             id: 2,
             path: '/report',
             text: '商品管理',
+            icon: "CameraOutlined"
         },
         {
             id: 3,
             path: '/service',
             text: '客服',
+            icon: "CustomerServiceOutlined"
         },
         {
             id: 4,
             path: "/chanel",
             text: "渠道管理",
+            icon: "DollarCircleOutlined",
             children: [
                 {
                     id: 5,
                     path: "/chanel/supplier",
-                    text: "供应商管理"
+                    text: "供应商管理",
+                    icon: "ProjectOutlined"
                 },
                 {
                     id: 6,
                     path: "/chanel/contract",
                     text: "合同管理",
+                    icon: "MacCommandOutlined",
                     children: [
                         {
                             id: 8,
                             path: '/chanel/contract/deal',
-                            text: "交易合同"
+                            text: "交易合同",
+                            icon: "MoneyCollectOutlined"
                         },
                         {
                             id: 9,
                             path: "/chanel/contract/mortgage",
-                            text: "抵押合同"
+                            text: "抵押合同",
+                            icon: "MehOutlined"
                         },
                         {
                             id: 10,
                             path: "/chanel/contract/lease",
-                            text: "租赁合同"
+                            text: "租赁合同",
+                            icon: "CiCircleOutlined"
                         }
                     ]
                 }
@@ -104,7 +113,8 @@ app.get("/menu", function (req, res) {
         {
             id: 7,
             path: "/customer",
-            text: "客户管理"
+            text: "客户管理",
+            icon: "CommentOutlined"
         },
         {
             id: 11,
@@ -115,12 +125,14 @@ app.get("/menu", function (req, res) {
                 {
                     id: 12,
                     path: "/commodity/mechanical",
-                    text: "机械商品"
+                    text: "机械商品",
+                    icon: "CarOutlined"
                 },
                 {
                     id: 13,
                     path: "/commodity/office",
-                    text: "办公用品"
+                    text: "办公用品",
+                    icon: "DesktopOutlined"
                 }
             ]
         }
