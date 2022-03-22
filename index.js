@@ -3,8 +3,8 @@ const app = express();
 
 app.all("*", function (req, res, next) {
     res.setHeader("Access-Control-Allow-Credentials", true);
-    res.setHeader("Access-Control-Allow-Origin", req.get("Origin"))
-    res.setHeader("Access-Control-Allow-Methods", 'POST, GET, OPTIONS, DELETE, PUT')
+    // res.setHeader("Access-Control-Allow-Origin", req.get("Origin")); // 添加这一行代码，代理配置不成功
+    res.setHeader("Access-Control-Allow-Methods", 'POST, GET, OPTIONS, DELETE, PUT');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, If-Modified-Since")
     next();
 })
@@ -12,8 +12,6 @@ app.all("*", function (req, res, next) {
 // 跨域设置
 app.get("/", function (req, res) {
     let id = req.query.id;
-    console.log(typeof id);
-    console.log(id);
     let user = [];
     if (id === "1") {
         user = [
@@ -56,7 +54,7 @@ app.get("/menu", function (req, res) {
             id: 1,
             path: '/orderList',
             text: '订单列表',
-            icon: "BarChartOutlined"
+            icon: "ConsoleSqlOutlined"
         },
         {
             id: 2,
@@ -147,6 +145,21 @@ app.get("/menu", function (req, res) {
 });
 
 
+app.get("/getUser", function (req, res) {
+    const user = [
+        {
+            id: 1,
+            name: "Nicholas Zakas",
+            gender: "male"
+        },
+        {
+            id: 2,
+            name: "Hanmeimei",
+            gender: "female"
+        }
+    ];
+    res.send(user);
+});
 
 app.listen(3000, function (err) {
     if (err) {
