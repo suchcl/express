@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 
+// 跨域设置
 app.all("*", function (req, res, next) {
     res.setHeader("Access-Control-Allow-Credentials", true);
     // res.setHeader("Access-Control-Allow-Origin", req.get("Origin")); // 添加这一行代码，代理配置不成功
@@ -9,7 +10,7 @@ app.all("*", function (req, res, next) {
     next();
 })
 
-// 跨域设置
+
 app.get("/", function (req, res) {
     let id = req.query.id;
     let user = [];
